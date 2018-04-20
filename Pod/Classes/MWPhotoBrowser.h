@@ -11,12 +11,15 @@
 #import "MWPhotoProtocol.h"
 #import "MWCaptionView.h"
 
+
 // Debug Logging
 #if 0 // Set to 1 to enable debug logging
 #define MWLog(x, ...) NSLog(x, ## __VA_ARGS__);
 #else
 #define MWLog(x, ...)
 #endif
+
+#define ZONE_ID_ARRAY @[@"/31903365/Haberturk//App//Fotohaber//IOS//300x250_1", @"/31903365/Haberturk//App//Fotohaber//IOS//300x250_2", @"/31903365/Haberturk//App//Fotohaber//IOS//300x250_3",@"/31903365/Haberturk//App//Fotohaber//IOS//300x250_1"]
 
 @class MWPhotoBrowser;
 
@@ -52,6 +55,13 @@
 @property (nonatomic) BOOL autoPlayOnAppear;
 @property (nonatomic) NSUInteger delayToHideElements;
 @property (nonatomic, readonly) NSUInteger currentIndex;
+@property (nonatomic, readonly) NSURLConnection *o_gezioConnection;
+
+@property (strong,nonatomic) UILabel *titleHeader;
+
+@property (strong,nonatomic) NSString *titleText;
+@property (strong,nonatomic) NSString *url;
+
 
 // Customise image selection icons as they are the only icons with a colour tint
 // Icon should be located in the app's main bundle
